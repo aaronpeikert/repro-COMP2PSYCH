@@ -1,0 +1,26 @@
+---
+title: An example
+author: Jane Doe
+date: 2020-02-17
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+if(!requireNamespace("pacman"))install.packages("pacman")
+pacman::p_load(fs, here, tidyverse)
+
+knitr::opts_chunk$set(echo = TRUE)
+knitr::read_chunk(here("R", "read.R"))
+```
+
+```{r}
+1 + 1
+```
+
+```{r read}
+```
+
+```{r}
+ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()
+```
+
