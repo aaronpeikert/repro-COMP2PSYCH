@@ -1,0 +1,93 @@
+---
+title: "Hands on Reproducibility"
+author: "Aaron Peikert & Andreas Brandmaier"
+date: "2020/02/20"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Questions
+
+* if you do not understand somethings:
+  * it is **always** my fault
+  * let me correct it by raising your hand
+* if you want to dig deeper:
+  * we have a tough schedule, but you will get an answer
+  * raise an issue on [GitHub](https://github.com/aaronpeikert/repro-COMP2PSYCH/issues/new)
+* if I ask a yes-no-question:
+  * white card up 🠖 yes
+  * black card up🠖 no
+  * no card up 🠖 don't care to answer
+
+# R Markdown
+
+* Markdown is a simple formatting syntax
+* RMarkdown lets you combine:
+  * code
+  * the thoughts that let to it
+  * its results
+
+  in an multitude of output formats
+* Reproducibility: text, code and results can't get out of sync
+
+# Proof
+
+I like coding, hence:
+
+```{r}
+toupper("code yeah!")
+```
+
+# Randome things 𝍩:
+
+**Paths**
+
+* relative paths 🠖 reproducible
+* absolute paths 🠖 *never* reproducible
+* `here::here()` is your friend
+
+**Packages**
+
+* to avoid errors, use plenty of packages
+* *always* load packages at the top of a script
+* be kind to your reproducers by using `pacman::p_load()`
+  * loads many packages at once
+  * installs them if needed
+
+# Let's get to work
+
+* duplo 🠖 probably longest chocolate in the world
+* repro 🠖 probably shortest multilab study in the world
+
+## Goal
+
+* `~`16 labs in this room
+* gather data and contribute them to a larger project
+
+# Get your copy
+
+* fork [this repo on GitHub](https://github.com/aaronpeikert/repro-COMP2PSYCH)
+* clone your fork
+  * click on `clone or download` 🠖 copy link
+  * open RStudio
+  * File 🠖  New Project ... 🠖 Version Control 🠖 Git 🠖 paste link
+* gather data
+  * open `R/save.R`
+  * admire the use of `pacman` & `here` 😁
+  * change `"my_unique_name.csv"` to anything unique (A-z/0-9 only please)
+  * Ctrl + A (mark everything)
+  * Ctrl + Enter (run everything that is marked)
+
+# See and contribute your results
+
+* Open `markdown.Rmd` 🠖 Click Knit
+* Look for the Git Pane in RStudio
+* see "☐ ? ? data/raw/my_unique_name.csv"
+* ☐ 🠖 ☑
+* click "click ☑ Commit" above
+* type commit message
+  * add my_unique_  me data #1
+* 
