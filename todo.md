@@ -35,14 +35,14 @@
 7. *Key take away*
   * what is a commit
   * difference between local/remote
-  * pull vs. push
+  * clone & push
 8. Merge of Pull Requests
 9. Set Up SSH:
   * RStudio -> Tools -> Global Options -> Git/SVN -> Create RSA-Key -> copy
   * GitHub -> Settings -> Key -> paste
   * Close RStudio/Delete Folder
   * Reclone with SSH: RStudio -> New Project -> Version Control -> Git -> SSH-Repo Link
-  * while everyone is working, I merge the other PR's
+  * while everyone is working, Andreas or Aaron merges the other PR's
 10. Show rerendering of markdown with all data
 11. Pull from Upstream -> everyone gets all data
 12. Push to own repo (test if SSH is working everywhere)
@@ -86,7 +86,7 @@
 11. explain automate_load_packages/automate_load_data
 11. *Key take away*
 
-##do it all yourself from scratch
+## do it all yourself from scratch
 
 1. RStudio -> New Project -> New Directory -> Repro Template -> anynameyouwant
 2. automate()
