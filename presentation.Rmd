@@ -239,6 +239,22 @@ ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()
 * click "Create Pull Request"
 * congratulate yourself 🎉
 
+# Fast Make & Docker
+
+```
+repro:
+  packages:
+    - fs
+    - here
+    - tidyverse
+    - sessioninfo
+    - aaronpeikert/repro@a20ff66
+  scripts:
+    - R/save.R
+  data:
+    results: data/preprocessed/final.csv
+```
+
 # Sessioninfo
 
 ```{r}
