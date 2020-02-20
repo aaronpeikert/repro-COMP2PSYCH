@@ -9,7 +9,8 @@ ggplot(results,
            group = diff)) + 
   geom_boxplot(outlier.alpha = .3) +
   facet_wrap(~id, scales = "free_y")  +
-  theme_bw() +
   scale_y_log10() +
-  theme(legend.position = "none")+
-  scale_fill_viridis_d()
+  scale_fill_viridis_d() +
+  theme_bw() +
+  theme(legend.position = "none", panel.grid = element_blank())+
+  NULL
