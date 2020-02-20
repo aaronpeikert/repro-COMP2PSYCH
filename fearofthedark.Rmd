@@ -34,7 +34,7 @@ Much more is possible like linking to a [book](https://bookdown.org/yihui/rmarkd
 ```
 
 ```{r}
-ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()+ theme_minimal()+
+ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()+ geom_violin()+ theme_minimal()+
   facet_wrap(~id, scales = "free_y")+
   scale_y_log10()
   NULL
