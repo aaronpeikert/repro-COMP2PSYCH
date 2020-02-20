@@ -4,4 +4,4 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-You find the slides over [here](https://github.com/aaronpeikert/repro-COMP2PSYCH/files/4229491/presentation.pdf)
+You find the slides over [here](https://github.com/aaronpeikert/repro-COMP2PSYCH/releases/latest)

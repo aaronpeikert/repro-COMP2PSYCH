@@ -1,5 +1,5 @@
 ---
-title: "Hands on Reproducibility"
+title: "Hands-on Reproducibility"
 author: "Aaron Peikert & Andreas Brandmaier"
 date: "2020/02/20"
 bibliography: bibliography.bib
