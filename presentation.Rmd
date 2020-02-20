@@ -2,16 +2,21 @@
 title: "Hands on Reproducibility"
 author: "Aaron Peikert & Andreas Brandmaier"
 date: "2020/02/20"
+bibliography: bibliography.bib
 output: slidy_presentation
 ---
 
 ```{r setup, include=FALSE}
+if(!requireNamespace("pacman"))install.packages("pacman")
+pacman::p_load(fs, here, tidyverse, sessioninfo)
+
 knitr::opts_chunk$set(echo = TRUE)
+knitr::read_chunk(here("R", "read.R"))
 ```
 
 # Questions
 
-* if you do not understand somethings:
+* if you do not understand something:
   * it is **always** my fault
   * let me correct it by raising your hand
 * if you want to dig deeper:
@@ -22,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
   * black card up🠖 no
   * no card up 🠖 don't care to answer
 
-# R Markdown
+# Summary: R Markdown
 
 * Markdown is a simple formatting syntax
 * RMarkdown lets you combine:
@@ -30,7 +35,7 @@ knitr::opts_chunk$set(echo = TRUE)
   * the thoughts that let to it
   * its results
 
-  in an multitude of output formats
+  in a multitude of output formats
 * Reproducibility: text, code and results can't get out of sync
 
 # Proof
@@ -40,8 +45,13 @@ I like coding, hence:
 ```{r}
 toupper("code yeah!")
 ```
+I like math and substantive psychological theory as well [@stevensPsychophysicalLaw1957]:
 
-# Randome things 𝍩:
+$$
+E = c \cdot R^k
+$$
+
+# Two small things
 
 **Paths**
 
@@ -64,30 +74,175 @@ toupper("code yeah!")
 
 ## Goal
 
-* `~`16 labs in this room
+* `~`16 "labs" in this room
 * gather data and contribute them to a larger project
 
 # Get your copy
 
-* fork [this repo on GitHub](https://github.com/aaronpeikert/repro-COMP2PSYCH)
+* fork this repo on [GitHub](https://github.com/aaronpeikert/repro-COMP2PSYCH)
 * clone your fork
-  * click on `clone or download` 🠖 copy link
+  * click on `clone or download` 🠖 copy
   * open RStudio
-  * File 🠖  New Project ... 🠖 Version Control 🠖 Git 🠖 paste link
+  * File 🠖  New Project ... 🠖 Version Control 🠖 Git 🠖 Ctrl + V
 * gather data
   * open `R/save.R`
   * admire the use of `pacman` & `here` 😁
-  * change `"my_unique_name.csv"` to anything unique (A-z/0-9 only please)
+  * change `"my_unique_name.csv"` to anything unique (A-z/0-9 only no spaces, please)
   * Ctrl + A (mark everything)
   * Ctrl + Enter (run everything that is marked)
 
-# See and contribute your results
+# See and upload your results
 
 * Open `markdown.Rmd` 🠖 Click Knit
-* Look for the Git Pane in RStudio
+* Look for the Git pane in RStudio
 * see "☐ ? ? data/raw/my_unique_name.csv"
-* ☐ 🠖 ☑
-* click "click ☑ Commit" above
-* type commit message
-  * add my_unique_  me data #1
-* 
+* click "☐" 🠖 ☑
+* click "☑ Commit" above
+* type commit message "add my_unique_name data #1"
+* click close
+* click "⇑ Push"
+* authenticate yourself
+* if authentification fails, lay back and wait 
+
+# Contribute your results
+
+* open [this repo on GitHub](https://github.com/aaronpeikert/repro-COMP2PSYCH)
+  * not your fork but `aaronpeikert/repro-COMP2PSYCH`
+* click on "New pull request"
+* click on "compare across forks"
+* click "Create Pull Request"
+* congratulate yourself 🎉
+
+# Summary: Public collaboration with GitHub
+
+* a *fork* is a copy of a repository on GitHub
+* to *clone* means to copy something from GitHub to your computer
+* a *commit* is a snapshot of all files
+* to *push* means to upload your repo to GitHub
+* a *pull request* informs someone that you added something of interest
+
+# Ensure the connection to GitHub
+
+* till now we have used `https`
+* `https` requires a password depending on the relation between mars and moon
+* password may be saved in plain text ≠ secure
+* hence we switch to `ssh`
+* RStudio 🠖  Tools 🠖 Global Options 🠖 Git/SVN
+  * Create RSA-Key ...
+  * View public key 🠖 Ctrl + A 🠖 Ctrl + C
+* go to [GitHub-Settings/SSH-Keys](https://github.com/settings/keys)
+  * New SSH Key
+  * Ctrl + V
+  * Add SSH key
+  * Password
+* RStudio 🠖 Alt + Shift + T
+
+```{bash, eval = FALSE}
+ssh -T git@github.com
+```
+
+# Get all results
+
+* RStudio 🠖 Alt + Shift + T
+
+```{bash, eval = FALSE}
+git pull git@github.com:aaronpeikert/repro-COMP2PSYCH.git
+```
+
+* Git Pane 🠖 Push
+
+# Delete and reclone
+
+* delete the folder `repro-COMP2PSYCH`
+* go to your fork on GitHub
+* click on `"clone or download"` 🠖 `"Use SSH"` 🠖 copy
+* open RStudio
+* File 🠖  New Project ... 🠖 Version Control 🠖 Git 🠖 Ctrl + V
+
+# Closer Collaboration
+
+* find groups of 3-4
+* give yourself a funny group name
+* decide at random who should be the owner
+
+```{r, eval=FALSE}
+sample(1:4, 1)
+```
+
+* go to the fork of the owner
+* Settings 🠖 Manage Access 🠖 Invite a collaborator 🠖 GitHub username
+* Rinse and repeat for all group members
+* check your e-mail
+
+# Boring Plot
+
+* go to fork of owner 🠖 clone
+* owner
+  * copy plot into `R/yourgroupname.R`
+  * Git Pane 🠖 add `R/yourgroupname.R` 🠖 Commit 🠖 Push
+* all
+  * Git Pane 🠖 Pull
+
+```{r read, echo=FALSE}
+```
+
+```{r}
+ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()
+```
+
+# More exciting
+
+* everone add something to the plot
+* add & commit changes
+* expect a big chaos
+* push
+* pull and merge conflicts
+* commit
+* resolved conflicts
+* push
+* rinse and repeat
+
+## Some Suggestions
+
+```{r eval=FALSE}
++ theme_minimal()
++ ylab("Reaction Time")
++ ggtitle("Awesome", "Stephens is right")
++ geom_violin()
++ scale_y_log10()
++ scale_x_log10()
++ facet_wrap(vars(midpoint), nrow = 1)
+```
+
+# Summary: Trustfull Collaboration
+
+**public collaboration**
+
+* everyone has its own copy on GitHub (and locally)
+* you only write (push) to the repo you own
+* and request others to incorparate your changes (pull request)
+* everything is decentrelized
+
+**trustfull collaboration**
+
+* if you trust a user you may grant write access
+* users then may push to your repository
+* in such setting a central repro on github makes sense
+* finegraded conssible with [GitHub Organizations](htttrol pops://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/creating-a-new-organization-from-scratch)
+
+# Contribute your results
+
+* open [this repo on GitHub](https://github.com/aaronpeikert/repro-COMP2PSYCH)
+  * not your fork but `aaronpeikert/repro-COMP2PSYCH`
+* click on "New pull request"
+* click on "compare across forks"
+* click "Create Pull Request"
+* congratulate yourself 🎉
+
+# Sessioninfo
+
+```{r}
+session_info()
+```
+
+# References
