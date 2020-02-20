@@ -10,10 +10,16 @@ ggplot(results,
            fill = id, 
            group = diff)) + 
   geom_point() + 
-  geom_boxplot(outlier.alpha = .3) +
+  geom_boxplot(outlier.alpha = .1) +
   facet_wrap(~id, scales = "free_y")  +
   scale_y_log10() +
   scale_fill_viridis_d() +
   theme_bw() +
   theme(legend.position = "none", panel.grid = element_blank())+
+  labs(
+    title = "The Annas plot",
+    subtitle = "Analyzing reaction time by difference condtion",
+    y = "Reaction time",
+    x = "Difference"
+  ) +
   NULL
