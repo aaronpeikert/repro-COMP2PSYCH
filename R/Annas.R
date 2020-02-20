@@ -17,4 +17,3 @@ ggplot(results,
   theme_bw() +
   theme(legend.position = "none", panel.grid = element_blank())+
   NULL
-
