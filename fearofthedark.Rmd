@@ -1,0 +1,47 @@
+---
+title: An example
+author: Jane Doe
+date: 2020-02-17
+bibliography: bibliography.bib
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+if(!requireNamespace("pacman"))install.packages("pacman")
+pacman::p_load(fs, here, tidyverse, sessioninfo)
+
+knitr::opts_chunk$set(echo = TRUE)
+knitr::read_chunk(here("R", "read.R"))
+```
+
+We can calculate stuff:
+
+```{r}
+1 + 1
+```
+
+And get the result. Also we can include formulas:
+
+$$
+E = c \cdot R^k
+$$
+
+And cite them [see @stevensPsychophysicalLaw1957].
+
+Much more is possible like linking to a [book](https://bookdown.org/yihui/rmarkdown/), written in markdown *about* markdown. May I also suggest the **great** [`papja`-package](https://github.com/crsh/papaja) for authoring APA manuscripts?
+
+```{r read}
+```
+
+```{r}
+ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()+ theme_minimal()+
+  facet_wrap(~id, scales = "free_y")+
+  scale_y_log10()
+  NULL
+```
+
+```{r}
+session_info()$platform
+```
+
+# References
