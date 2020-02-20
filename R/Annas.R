@@ -17,7 +17,7 @@ ggplot(results,
   theme_bw() +
   theme(legend.position = "none", panel.grid = element_blank())+
   labs(
-    title = "The Annas plot",
+    title = "The Annas Plot",
     subtitle = "Analyzing reaction time by difference condition",
     y = "Reaction time",
     x = "Difference"
