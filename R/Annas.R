@@ -1,11 +1,19 @@
 if(!requireNamespace("pacman"))install.packages("pacman")
-pacman::p_load(here, tidyverse)
+pacman::p_load(here, tidyverse, viridis)
 
 source(here("R", "read.R"))
 
 results <- results %>% mutate(diff = factor(diff))
 
-ggplot(results, aes(diff, time, group = diff, color = diff)) + geom_point() + 
-  geom_boxplot() +
-  scale_y_continuous(trans='log10') + 
-  theme_bw()
+ggplot(results, 
+       aes(diff, time, 
+           fill = id, 
+           group = diff)) + 
+  geom_point() + 
+  geom_boxplot(outlier.alpha = .3) +
+  facet_wrap(~id, scales = "free_y")  +
+  theme_minimal() +
+  scale_y_log10() +
+  theme_bw() +
+  theme(legend.position = "none")+
+  scale_fill_viridis_d()
