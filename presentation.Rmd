@@ -90,6 +90,7 @@ $$
   * change `"my_unique_name.csv"` to anything unique (A-z/0-9 only no spaces, please)
   * Ctrl + A (mark everything)
   * Ctrl + Enter (run everything that is marked)
+  * Run last line (`write.csv`)
 
 # See and upload your results
 
