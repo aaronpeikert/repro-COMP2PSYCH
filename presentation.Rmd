@@ -217,6 +217,10 @@ ggplot(results, aes(diff, time, group = diff)) + geom_boxplot()
 
 # Summary: Trustfull Collaboration
 
+![](https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif)
+
+# Summary: Trustfull Collaboration
+
 **public collaboration**
 
 * everyone has its own copy on GitHub (and locally)
