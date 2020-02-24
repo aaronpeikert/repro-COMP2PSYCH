@@ -18,6 +18,8 @@
 
 # Remedies
 
+* conceptionalize distributed working
+* formulate goals more clearly
 * switching between life demo & slides causes underuse of slides -> gifs instead of live demo? -> more control + better storyline
 * do ssh directly after rmarkdown
 * merge (conflict) -> git reset --hard + change of default editor
